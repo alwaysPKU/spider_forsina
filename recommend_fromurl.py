@@ -1,0 +1,112 @@
+# 从名单直接拼接url爬取所需内容
+# 直接输出对应name的推荐列表
+import load_url as lurl
+import get_stardict as star
+import analysis
+import json as js
+
+
+path = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20171225.txt'
+# {starname:url}
+full=[]
+full.append(star.get_mingxingurl_dict(path))
+full.append(star.get_yinyueurl_dict(path))
+# star_url = star.get_mingxingurl_dict(path)  # 明星
+# star_url = star.get_yinyueurl_dict(path)  # 音乐
+# star_url = star.getmingxingurl_test() # 测试用例
+
+def recomend(star_url):
+    with open('./res_container/res9','a') as f:
+        for k,v in star_url.items():
+            star_name = k    #明星名字
+            print('======='+star_name+'=======')
+            relation_list = [] # 解析的明星relation列表
+            movie_url = [] # 解析明星的movieurl列表
+            show_url = [] # 解析明星的showurl列表
+
+            full = {} # each line {star_name:full_relation}
+            full_relation=[] # 一条总记录
+            movie_dic={} # 解析的movie推荐列表
+            show_dic={} # 借些的show推荐列表
+
+            # print(v)
+            data = lurl.load(v)
+            if data == None:
+                with open('log','a') as f1:
+                    f1.write('明星url_load失败:')
+                    f1.write(k+':'+v+'\n')
+                continue
+            #解析结果：relation，movieurl，showurl
+            relation_list=analysis.get_relations(data)
+            movie_url=analysis.get_movieurl(data)
+            show_url=analysis.get_showurl(data)
+            # print(show_url)
+
+            # relation 结果存储 {relation:[name...}
+            if len(relation_list)!=0:
+                tmp_dict={}
+                tmp_list=[]
+                print('relation')
+                for i in relation_list:
+                    for j in i.keys():
+                        tmp_list.append(i[j])
+                tmp_dict['relation']=tmp_list
+                full_relation.append(tmp_dict)
+                print('relation_over')
+
+            #load movieurl列表并解析
+            if movie_url != None:
+                print('movie')
+                movie_set = set()
+                # 逐一借些movie的url
+                for url in movie_url:
+                    # print(url)
+                    tmpset = analysis.analysis_movieurl(url)
+                    # print(tmpset)
+                    if tmpset != None and len(tmpset)!=0:
+                        movie_set=movie_set | tmpset
+                    else:
+                        continue
+                # 把该明星名字从列表中去除
+                if movie_set != '' and star_name in movie_set:
+                    movie_set.remove(star_name)
+                movie_list=list(movie_set)
+                movie_dic['movie']=movie_list
+                if len(movie_dic['movie']) != 0 and movie_dic['movie'] != None:
+                    full_relation.append(movie_dic)
+                    print('movie_over')
+
+            # load showurl列表并解析
+            if show_url!= None:
+                print('show')
+                show_set = set()
+                for url in show_url:
+                    # print(url)
+                    tmpset2 = analysis.analysis_showurl(url)
+                    # print(tmpset2)
+                    if tmpset2 !=None and len(tmpset2)!=0:
+                        show_set=show_set | tmpset2
+                    else:
+                        continue
+                # 20171228新加的还没尝试(过滤重复名字)
+                if show_set != '' and star_name in show_set:
+                    show_set.remove(star_name)
+                show_list=list(show_set)
+                # print(show_list)
+                show_dic['show'] = show_list
+                if len(show_dic['show']) != 0 and show_dic['show'] != None:
+                    full_relation.append(show_dic)
+                    print('show_over')
+
+            if len(full_relation)!=0:
+                full[star_name]=full_relation
+                data = js.dumps(full, ensure_ascii=False)
+                f.write(data+'\n')
+            else:
+                with open('None_recommend_list','a') as f3:
+                    f3.write(k+':'+v+'\n')
+
+
+if __name__=='__main__':
+    for i in full:
+        recomend(i)
