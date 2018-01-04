@@ -1,2 +1,2 @@
 when i worked for sina 
-this project is to spide the relations from stars
+this project is to crawl the relations from baike
