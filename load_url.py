@@ -1,10 +1,4 @@
-import sys
-import urllib3
 import urllib.request
-import time
-import random
-import bs4
-
 
 # 返回url内容
 def load2(url):

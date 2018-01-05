@@ -1,20 +1,29 @@
+import urllib.request
 
-path = '/Users/zhangwei/PycharmProjects/spider_mingxing/20171123.txt'
-
-# star_list = star.get_yinyueurl_dict(path)
-# print(len(star_list))
-# print(star_list)
-
-with open(path) as f:
-    line = f.readline()
-    n=0
-    while line:
-        item = line.split()
-        if len(item) == 3 and item[2] == 'CP':
-            n = n+1
-            print(line, n)
-        line = f.readline()
+def load(url):
+	if url == None:
+		return None
+	try:
+		response = urllib.request.urlopen(url, timeout=60)
+		if response.getcode==200:
+			return None
+		return response.read()
+	except Exception as e:
+		with open('log','a') as f:
+			f.write('错误url : '+url+'-'+str(e)+'\n')
+		return None
 
 
+# 写html
+def write_html(star_name,html):
+	if html is not None:
+		with open(star_name,'w') as f:
+			f.write(html)
 
 
+url = "https://baike.baidu.com/item/"+urllib.request.quote("舒畅")
+print(url)
+
+data = load(url).decode("utf-8")
+with open("./shuchang", "w") as f:
+	f.write(data)
