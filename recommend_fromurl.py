@@ -4,19 +4,16 @@ import load_url as lurl
 import get_stardict as star
 import analysis
 import json as js
+import name_topicid as name_oid
+import add_re_relation as add
+import mkdir
+import count
 
 
-path = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20171225.txt'
-# {starname:url}
-full=[]
-full.append(star.get_mingxingurl_dict(path))
-full.append(star.get_yinyueurl_dict(path))
-# star_url = star.get_mingxingurl_dict(path)  # 明星
-# star_url = star.get_yinyueurl_dict(path)  # 音乐
-# star_url = star.getmingxingurl_test() # 测试用例
 
-def recomend(star_url):
-    with open('./res_container/res9','a') as f:
+
+def recomend(star_url, path):
+    with open(path,'a') as f:
         for k,v in star_url.items():
             star_name = k    #明星名字
             print('======='+star_name+'=======')
@@ -108,5 +105,26 @@ def recomend(star_url):
 
 
 if __name__=='__main__':
+
+    # 1. 获取推荐列表（人名）
+    path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107.txt'  # 每次运行修改
+    path2 = './res_container/res11'  # 每次运行修改
+    # {starname:url}
+    full = []
+    full.append(star.get_mingxingurl_dict(path1))
+    full.append(star.get_yinyueurl_dict(path1))
+    # star_url = star.get_mingxingurl_dict(path)  # 明星
+    # star_url = star.get_yinyueurl_dict(path)  # 音乐
+    # star_url = star.getmingxingurl_test() # 测试用例
     for i in full:
-        recomend(i)
+        recomend(i,path2)
+
+    # 2. 获取oid推荐列表
+
+    path3 = mkdir.mkdir('./recommend_container/recommend6/')# 每次运行修改
+    print(type(path3))
+    name_oid.name_oid(path1, path2, path3)
+    # 3. 增加反向关系，得到最终的列表
+    add.ad_re_relation(path3)
+    # 4.统计结果
+    count.count(path3)

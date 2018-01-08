@@ -1,29 +1,23 @@
-import urllib.request
-
-def load(url):
-	if url == None:
-		return None
-	try:
-		response = urllib.request.urlopen(url, timeout=60)
-		if response.getcode==200:
-			return None
-		return response.read()
-	except Exception as e:
-		with open('log','a') as f:
-			f.write('错误url : '+url+'-'+str(e)+'\n')
-		return None
+# 从名单直接拼接url爬取所需内容
+# 直接输出对应name的推荐列表
+import load_url as lurl
+import get_stardict as star
+import analysis
+import json as js
+import name_topicid as name_oid
+import add_re_relation as add
+import mkdir
+import count
 
 
-# 写html
-def write_html(star_name,html):
-	if html is not None:
-		with open(star_name,'w') as f:
-			f.write(html)
+path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107.txt'  # 每次运行修改
+path2 = './res_container/res11'  # 每次运行修改
+# 2. 获取oid推荐列表
 
-
-url = "https://baike.baidu.com/item/"+urllib.request.quote("舒畅")
-print(url)
-
-data = load(url).decode("utf-8")
-with open("./shuchang", "w") as f:
-	f.write(data)
+path3 = mkdir.mkdir('./recommend_container/recommend6/')# 每次运行修改
+print(type(path3))
+name_oid.name_oid(path1, path2, path3)
+# 3. 增加反向关系，得到最终的列表
+add.ad_re_relation(path3)
+# 4.统计结果
+count.count(path3)
