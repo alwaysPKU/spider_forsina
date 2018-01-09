@@ -117,7 +117,7 @@ if __name__=='__main__':
     # star_url = star.get_yinyueurl_dict(path)  # 音乐
     # star_url = star.getmingxingurl_test() # 测试用例
     for i in full:
-        recomend(i,path2)
+        recomend(i, path2)
 
     # 2. 获取oid推荐列表
 
