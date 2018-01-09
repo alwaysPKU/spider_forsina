@@ -1,8 +1,9 @@
 import os
 
+
 def mkdir(path):
     """
-    创建并且返回路径
+    创建并且返回该路径
     :param path: 
     :return: 
     """
