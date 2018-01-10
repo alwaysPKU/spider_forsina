@@ -8,8 +8,8 @@ def count(path):
         full_count['movie']=0
         full_count['show']=0
         while line:
-            if  line != None:
-                n=+1
+            if line != None:
+                n+=1
             item = js.loads(line)
             for k,v in item.items():
                 for i in v:

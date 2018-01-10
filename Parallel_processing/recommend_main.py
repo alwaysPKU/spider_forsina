@@ -123,7 +123,7 @@ if __name__=='__main__':
 
     # 1. 获取推荐列表（人名）
     path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107.txt'  # 每次运行修改
-    path2 = '../res_container/res12'  # 每次运行修改
+    path2 = '../res_container/res13'  # 每次运行修改
     # {starname:url}
     full = []
     full.append(star.get_mingxingurl_dict(path1))
@@ -133,13 +133,11 @@ if __name__=='__main__':
     # star_url = star.getmingxingurl_test() # 测试用例
     for i in full:
         recomend(i, path2)
-
     # 2. 获取oid推荐列表
-
     path3 = mkdir.mkdir('../recommend_container/recommend7/')# 每次运行修改
-    path3_3 = './recommend_container/recommend7/'
-    name_oid.name_oid(path1, path2, path3_3)
+    # path3_3 = './recommend_container/recommend7/'# 修改
+    name_oid.name_oid(path1, path2, path3)
     # 3. 增加反向关系，得到最终的列表
-    add.ad_re_relation(path3_3)
+    add.ad_re_relation(path3)
     # 4.统计结果
-    count.count(path3_3)
+    count.count(path3)
