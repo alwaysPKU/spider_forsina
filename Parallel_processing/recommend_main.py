@@ -9,6 +9,7 @@ import add_re_relation as add
 import mkdir
 import count
 from multiprocessing import Pool
+import time
 
 
 
@@ -120,7 +121,7 @@ def get_showset(show_url):
     return show_set
 
 if __name__=='__main__':
-
+    start_time = time.time()
     # 1. 获取推荐列表（人名）
     path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107.txt'  # 每次运行修改
     path2 = '../res_container/res13'  # 每次运行修改
@@ -141,3 +142,5 @@ if __name__=='__main__':
     add.ad_re_relation(path3)
     # 4.统计结果
     count.count(path3)
+    end_time = time.time()
+    print('程序运行了：' + (end_time - start_time) / 60 + '分钟')
