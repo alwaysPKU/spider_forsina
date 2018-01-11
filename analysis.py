@@ -92,6 +92,7 @@ def get_showurl(data):
     :return:返回 show_url 列表
     """
     res = []
+    res2 = []
     soup1 = bs4.BeautifulSoup(data, 'html.parser')
     tags1 = soup1.find_all('table', attrs={'class': 'cell-module'})
     if (len(tags1) == 0):
@@ -112,7 +113,8 @@ def get_showurl(data):
         else:
             continue
         res.append(show_url)
-    return res
+    res2 = list(set(res))
+    return res2
 
 
 # get_movie
