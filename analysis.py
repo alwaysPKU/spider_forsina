@@ -3,6 +3,11 @@ import load_url as lurl
 # 这里输入都是load的data
 tmp = "https://baike.baidu.com" #拼接前缀
 def get_relations(data):
+    """
+    直接读取html数据，解析出来明星的relations
+    :param data: html数据
+    :return: 返回star-relation列表
+    """
     # if data == None:
     #     print('timeout:'+url)
     #     return None
@@ -28,7 +33,13 @@ def get_relations(data):
     # print(relations)
     return res
 
+
 def get_movieurl(data):
+    """
+    直接读取明星的html，返回参演电影的url列表
+    :param data: 
+    :return: 返回show_url列表
+    """
     url = []
     # if data == None:
     #     print('timeout:'+star_url)
@@ -73,7 +84,13 @@ def get_movieurl(data):
     # print(url)
     return url
 
+
 def get_showurl(data):
+    """
+    通过读取的明星html数据，返回参加的show的url列表
+    :param data: 
+    :return:返回 show_url 列表
+    """
     res = []
     soup1 = bs4.BeautifulSoup(data, 'html.parser')
     tags1 = soup1.find_all('table', attrs={'class': 'cell-module'})
@@ -100,6 +117,11 @@ def get_showurl(data):
 
 # get_movie
 def analysis_movieurl(url):
+    """
+    解析url，获取该条url的movie——relation关系
+    :param url: 需要解析的movie——url地址
+    :return: 返回一个set集合
+    """
     relation = set()
     data = lurl.load(url)
     if data == None:
@@ -137,8 +159,14 @@ def analysis_movieurl(url):
     relation=set(list)
     return relation
 
+
 # get_show
 def analysis_showurl(url):
+    """
+    解析url，获取该条movie-url的movie-relation关系
+    :param url: 
+    :return: 返回一个set集合
+    """
     data = lurl.load(url)
     if data == None:
         print('timeout:'+url)
