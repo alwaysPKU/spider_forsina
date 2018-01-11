@@ -1,5 +1,10 @@
 import json as js
 def count(path):
+    """
+    统计json格式推荐结果，打印到console
+    :param path: 路径
+    :return: 
+    """
     with open(path+'recommend_list') as f:
         n = 0
         line = f.readline()
