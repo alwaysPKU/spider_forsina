@@ -15,6 +15,11 @@ def load2(url):
 	return response.read()
 
 def load(url):
+	"""
+	加载url数据，返回bytes类型
+	:param url: 
+	:return: 返回<class 'bytes'>
+	"""
 	if url == None:
 		return None
 	try:
@@ -36,7 +41,6 @@ def write_html(star_name,html):
 		# print(star_name)
 
 # data = load('https://baike.baidu.com/item/Lonely/13213795')
-# print(data)
-# write_html('test', data)
+# print(type(data))
 
 
