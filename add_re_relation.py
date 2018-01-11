@@ -7,6 +7,11 @@ import json as js
 #         full_list.append(js.loads(item))
 #     # print(full_list[0])
 def ad_re_relation(path):
+    """
+    增加反向关系
+    :param path: 推荐列表json
+    :return: 推荐列表json
+    """
     with open(path+'recommend_list_prior') as f1:
         full_dic={}
         line = f1.readline()
