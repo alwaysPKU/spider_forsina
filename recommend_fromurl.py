@@ -71,7 +71,7 @@ def recomend(star_url, path):
                 movie_list=list(movie_set)
                 movie_dic['movie']=movie_list
                 if len(movie_dic['movie']) != 0 and movie_dic['movie'] != None:
-                    print(len(movie_dic['movie']))
+                    # print(len(movie_dic['movie']))
                     full_relation.append(movie_dic)
                     print('movie_over')
 
