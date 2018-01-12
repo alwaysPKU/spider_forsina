@@ -1,5 +1,6 @@
 import bs4
 import load_url as lurl
+import re
 # 这里输入都是load的data
 tmp = "https://baike.baidu.com" #拼接前缀
 def get_relations(data):
@@ -34,9 +35,10 @@ def get_relations(data):
     return res
 
 
-def get_movieurl(data):
+def get_movieurl_old1(data):
     """
     直接读取明星的html，返回参演电影的url列表
+    这个读的是明星关系的旁边的代表作品，有可能会漏掉信息，所以废除了
     :param data: 
     :return: 返回show_url列表
     """
@@ -82,6 +84,51 @@ def get_movieurl(data):
                 #     n = n + 1
                 #     print(n)
     # print(url)
+    return url
+
+
+def get_movieurl(data):
+    """
+    更新规则，从代表总品的列表里获取
+    :param data: 
+    :return: 
+    """
+    url = []
+    soup1 = bs4.BeautifulSoup(data, 'html.parser')
+    tag1 = soup1.find('dl',attrs={'class':'basicInfo-block basicInfo-right'})
+    num = -1
+    if not tag1:
+        return None
+    # else:
+    soup2 = bs4.BeautifulSoup(str(tag1), 'html.parser')
+    tags2 = soup2.find_all('dt', attrs={'class': 'basicInfo-item name'})
+    tags3 = soup2.find_all('dd', attrs={'class': 'basicInfo-item value'})
+    for tag2 in tags2:
+        # print(tag2.text.strip('\n'))
+        if tag2.text != '代表作品' and num==len(tags2)-2:
+            num=-1
+        else:
+            if tag2.text == '代表作品':
+                # print('here')
+                num=num+1
+                break
+            else:
+                num=num+1
+    if num != -1:
+        mark = tags3[num]
+        soup3 = bs4.BeautifulSoup(str(mark), 'html.parser')
+        tags4 = soup3.find_all('a', attrs={'target':'_blank'})
+        for tag4 in tags4:
+            url_tmp = tag4['href']
+            if url_tmp[0] == '/':
+                movie_url = tmp + url_tmp
+            elif url_tmp[1] == 'h':
+                movie_url = url_tmp
+            else:
+                continue
+            url.append(movie_url)
+    else:
+        return None
     return url
 
 
@@ -157,8 +204,17 @@ def analysis_movieurl(url):
         zhuyan = tags3[num]
     else:
         return None
-    list = zhuyan.text.strip('\n').split('，')
+    # list = zhuyan.text.strip('\n').split('，')
+    # zhuyan =
+    list = re.split(r'[，、]', zhuyan.text.strip('\n'))
+    # print(list)
+    # print(type(list))
+    for i in range(len(list)):
+        list[i] = re.sub('[\[\d\]\n\xa0]|[\(（][^\)）]+[\)）]$', '', list[i])
+        # list[i]=list[i].rstrip('\n').rstrip('[').rstrip('（')
     relation=set(list)
+    # print(len(relation))
+    # print(relation)
     return relation
 
 
@@ -204,7 +260,14 @@ def analysis_showurl(url):
         # print(zhuchiren)
     else:
         return None
-    list = zhuchiren.text.strip('\n').split('、')
+    # list = zhuchiren.text.strip('\n').split('、')
     # print(list)
+    list = re.split(r'[，、]', zhuchiren.text.strip('\n'))
+    # print(list)
+    # print(type(list))
+    for i in range(len(list)):
+        list[i] = re.sub('[\[\d\]\n\xa0]|[\(（][^\)）]+[\)）]$', '', list[i])
+        # list[i]=list[i].rstrip('\n').rstrip('[').rstrip('（')
+    # relation = set(list)
     relation = set(list)
     return relation

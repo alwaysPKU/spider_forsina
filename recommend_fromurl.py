@@ -71,6 +71,7 @@ def recomend(star_url, path):
                 movie_list=list(movie_set)
                 movie_dic['movie']=movie_list
                 if len(movie_dic['movie']) != 0 and movie_dic['movie'] != None:
+                    print(len(movie_dic['movie']))
                     full_relation.append(movie_dic)
                     print('movie_over')
 
@@ -108,8 +109,8 @@ def recomend(star_url, path):
 if __name__=='__main__':
     start_time = time.time()
     # 1. 获取推荐列表（人名）
-    path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107.txt'  # 每次运行修改
-    path2 = './res_container/res11'  # 每次运行修改
+    path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107test.txt'  # 每次运行修改
+    path2 = './res_container/test2'  # 每次运行修改
     # {starname:url}
     full = []
     full.append(star.get_mingxingurl_dict(path1))
@@ -122,7 +123,7 @@ if __name__=='__main__':
 
     # 2. 获取oid推荐列表
 
-    path3 = mkdir.mkdir('./recommend_container/recommend6/')# 每次运行修改
+    path3 = mkdir.mkdir('./recommend_container/test/')# 每次运行修改
     print(type(path3))
     name_oid.name_oid(path1, path2, path3)
     # 3. 增加反向关系，得到最终的列表
