@@ -109,8 +109,8 @@ def recomend(star_url, path):
 if __name__=='__main__':
     start_time = time.time()
     # 1. 获取推荐列表（人名）
-    path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180107test.txt'  # 每次运行修改
-    path2 = './res_container/test2'  # 每次运行修改
+    path1 = '/Users/zhangwei/Desktop/sina_job/recommend/oid_name_type/20180114.txt'  # 每次运行修改
+    path2 = './res_container/res14'  # 每次运行修改
     # {starname:url}
     full = []
     full.append(star.get_mingxingurl_dict(path1))
@@ -123,7 +123,7 @@ if __name__=='__main__':
 
     # 2. 获取oid推荐列表
 
-    path3 = mkdir.mkdir('./recommend_container/test/')# 每次运行修改
+    path3 = mkdir.mkdir('./recommend_container/recommend8/')# 每次运行修改
     print(type(path3))
     name_oid.name_oid(path1, path2, path3)
     # 3. 增加反向关系，得到最终的列表
@@ -131,4 +131,4 @@ if __name__=='__main__':
     # 4.统计结果
     count.count(path3)
     end_time=time.time()
-    print('程序运行了：' + (end_time-start_time)/60 + '分钟')
+    print('程序运行了：' + str((end_time-start_time)/60) + '分钟')

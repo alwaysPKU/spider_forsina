@@ -8,6 +8,7 @@ def mkdir(path):
     :return: 
     """
     if not os.path.exists(path):
-        return os.mkdir(path)
+        os.mkdir(path)
+        return path
     else:
         return path

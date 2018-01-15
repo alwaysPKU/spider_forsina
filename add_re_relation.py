@@ -79,6 +79,8 @@ def ad_re_relation(path):
 
                 write_data=js.dumps(newdata)
                 f2.write(write_data+'\n')
-
                 line=f3.readline()
+    with open(path+'recommend_count','a',encoding='utf-8') as f5:
+        data = js.dumps(full_count)
+        f5.write('增加的关系量：'+data)
     print(full_count)

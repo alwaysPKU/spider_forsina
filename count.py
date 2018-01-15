@@ -21,5 +21,7 @@ def count(path):
                     for k2,v2 in i.items():
                         full_count[k2]=full_count[k2]+len(v2)
             line=f.readline()
-
+    with open(path+'recommend_count','a',encoding='utf-8') as f5:
+        data = js.dumps(full_count)
+        f5.write('推荐关系量：'+str(n)+data)
     print(n, full_count)

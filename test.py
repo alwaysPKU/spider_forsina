@@ -21,3 +21,5 @@ name_oid.name_oid(path1, path2, path3)
 add.ad_re_relation(path3)
 # 4.统计结果
 count.count(path3)
+
+
