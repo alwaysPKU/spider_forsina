@@ -23,5 +23,5 @@ def count(path):
             line=f.readline()
     with open(path+'recommend_count','a',encoding='utf-8') as f5:
         data = js.dumps(full_count)
-        f5.write('推荐关系量：'+str(n)+data)
+        f5.write('推荐关系量：'+str(n)+data+'\n')
     print(n, full_count)

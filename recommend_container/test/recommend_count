@@ -1,2 +1,24 @@
-res数据量：{"movie": 0, "relation": 0, "show": 0}
-匹配到id的量：{"movie": 0, "relation": 0, "show": 0}
+{"刘烨": [{"relation": "4/7"}, {"movie": "25/37"}, {"show": "0/1"}]}
+{"谢娜": [{"relation": "5/5"}, {"show": "11/19"}]}
+res数据量：{"show": 20, "movie": 37, "relation": 12}
+匹配到id的量：{"show": 11, "movie": 25, "relation": 9}
+增加的关系量：{"show": 0, "movie": 0, "relation": 0}推荐关系量：2{"show": 11, "movie": 25, "relation": 9}{"刘烨": [{"relation": "4/7"}, {"movie": "25/37"}, {"show": "0/1"}]}
+{"刘烨": [{"relation": "4/7"}, {"movie": "25/37"}, {"show": "0/1"}]}
+{"谢娜": [{"relation": "5/5"}, {"show": "11/19"}]}
+{"谢娜": [{"relation": "5/5"}, {"movie": "90/145"}, {"show": "11/19"}]}
+{"刘烨": [{"relation": "4/7"}, {"movie": "144/226"}, {"show": "0/1"}]}
+{"青钰雯": [{"movie": "5/7"}]}
+res数据量：{"movie": 415, "relation": 24, "show": 40}
+匹配到id的量：{"movie": 264, "relation": 18, "show": 22}
+增加的关系量：{"movie": 2, "relation": 0, "show": 0}推荐关系量：5{"movie": 266, "relation": 18, "show": 22}{"刘烨": [{"relation": "4/7"}, {"movie": "25/37"}, {"show": "0/1"}]}
+{"谢娜": [{"relation": "5/5"}, {"show": "11/19"}]}
+{"谢娜": [{"relation": "5/5"}, {"movie": "90/145"}, {"show": "11/19"}]}
+{"刘烨": [{"relation": "4/7"}, {"movie": "144/226"}, {"show": "0/1"}]}
+{"青钰雯": [{"movie": "5/7"}]}
+{"谢娜": [{"relation": "5/5"}, {"movie": "90/145"}, {"show": "11/19"}]}
+{"刘烨": [{"relation": "4/7"}, {"movie": "144/226"}, {"show": "0/1"}]}
+{"青钰雯": [{"movie": "5/7"}]}
+res数据量：{"relation": 36, "show": 60, "movie": 793}
+匹配到id的量：{"relation": 27, "show": 33, "movie": 503}
+增加的关系量：{"relation": 0, "show": 0, "movie": 4}
+推荐关系量：18{"relation": 63, "show": 77, "movie": 1037}

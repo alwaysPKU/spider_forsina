@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1844c673-cac8-479c-a92f-8c4154a96299" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend_container/test/recommend_count" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/res_container/test" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res_container/test2" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parallel_processing/None_recommend_list" afterPath="$PROJECT_DIR$/Parallel_processing/None_recommend_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parallel_processing/test2.py" afterPath="$PROJECT_DIR$/Parallel_processing/test2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parallel_processing/recommend_main.py" afterPath="$PROJECT_DIR$/Parallel_processing/recommend_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_re_relation.py" afterPath="$PROJECT_DIR$/add_re_relation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analysis.py" afterPath="$PROJECT_DIR$/analysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/count.py" afterPath="$PROJECT_DIR$/count.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +22,7 @@
     <SUITE FILE_PATH="coverage/recommend_baike_system$recommend_fromurl.coverage" NAME="recommend_fromurl Coverage Results" MODIFIED="1515987985782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/recommend_baike_system$recommend_main.coverage" NAME="recommend_main Coverage Results" MODIFIED="1515988267127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Parallel_processing" />
     <SUITE FILE_PATH="coverage/recommend_baike_system$add_re_relation.coverage" NAME="add_re_relation Coverage Results" MODIFIED="1514889922934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/recommend_baike_system$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1516085854878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Parallel_processing" />
+    <SUITE FILE_PATH="coverage/recommend_baike_system$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1516095653270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Parallel_processing" />
     <SUITE FILE_PATH="coverage/recommend_baike_system$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1515489263471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Parallel_processing" />
     <SUITE FILE_PATH="coverage/recommend_baike_system$load_url.coverage" NAME="load_url Coverage Results" MODIFIED="1515642875614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/recommend_baike_system$test_json.coverage" NAME="test_json Coverage Results" MODIFIED="1514271507546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -34,8 +37,8 @@
       <file leaf-file-name="recommend_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parallel_processing/recommend_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="136" column="26" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="136" selection-end-column="26" />
+            <state relative-caret-position="123">
+              <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
                 <element signature="e#37#60#0" expanded="true" />
               </folding>
@@ -43,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="None_recommend_list" pinned="false" current-in-tab="true">
+      <file leaf-file-name="None_recommend_list" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parallel_processing/None_recommend_list">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="12221" column="60" lean-forward="true" selection-start-line="12221" selection-start-column="4" selection-end-line="12221" selection-end-column="60" />
+            <state relative-caret-position="-6122">
+              <caret line="12040" column="60" lean-forward="true" selection-start-line="12040" selection-start-column="4" selection-end-line="12040" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -56,10 +59,30 @@
       <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parallel_processing/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="129">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analysis.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/analysis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="172" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#163#1022#0" expanded="false" />
+                <element signature="e#1058#2789#0" expanded="false" />
+                <element signature="e#2825#4104#0" expanded="false" />
+                <element signature="e#4140#4814#0" expanded="false" />
+                <element signature="e#4845#5239#0" expanded="false" />
+                <element signature="e#5269#6090#0" expanded="false" />
+                <element signature="e#6137#7655#0" expanded="false" />
+                <element signature="e#7700#9314#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -68,8 +91,18 @@
       <file leaf-file-name="test" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res_container/test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="40">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommend_count" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recommend_container/test/recommend_count">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="18" column="68" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="18" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -78,43 +111,19 @@
       <file leaf-file-name="add_re_relation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_re_relation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="269">
+              <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parallel_processing/log">
+      <file leaf-file-name="count.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/count.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="73" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="73" />
+            <state relative-caret-position="500">
+              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recommend_fromurl.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recommend_fromurl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="125" column="57" lean-forward="false" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
-              <folding>
-                <element signature="e#37#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="name_topicid.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/name_topicid.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-              <folding>
-                <element signature="e#106#6278#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -130,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>B1A4</find>
       <find>SuperJunior</find>
       <find>FTISLAND</find>
       <find>TomFelton</find>
@@ -160,6 +168,7 @@
       <find>href</find>
       <find>Angelababy</find>
       <find>杨颖</find>
+      <find>herf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,15 +206,20 @@
         <option value="$PROJECT_DIR$/res_container/res12" />
         <option value="$PROJECT_DIR$/Parallel_processing/None_recommend_list" />
         <option value="$PROJECT_DIR$/load_url.py" />
-        <option value="$PROJECT_DIR$/analysis.py" />
-        <option value="$PROJECT_DIR$/add_re_relation.py" />
         <option value="$PROJECT_DIR$/name_topicid.py" />
         <option value="$PROJECT_DIR$/recommend_fromurl.py" />
-        <option value="$PROJECT_DIR$/Parallel_processing/recommend_main.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/count.py" />
         <option value="$PROJECT_DIR$/mkdir.py" />
         <option value="$PROJECT_DIR$/Parallel_processing/test2.py" />
+        <option value="$PROJECT_DIR$/res_container/test" />
+        <option value="$PROJECT_DIR$/recommend_container/test/recommend_count" />
+        <option value="$PROJECT_DIR$/recommend_container/test/recommend_list" />
+        <option value="$PROJECT_DIR$/recommend_container/test/recommend_list_prior" />
+        <option value="$PROJECT_DIR$/recommend_container/test/recommend_lose" />
+        <option value="$PROJECT_DIR$/add_re_relation.py" />
+        <option value="$PROJECT_DIR$/count.py" />
+        <option value="$PROJECT_DIR$/Parallel_processing/recommend_main.py" />
+        <option value="$PROJECT_DIR$/analysis.py" />
       </list>
     </option>
   </component>
@@ -608,7 +622,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="728" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25605816" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -661,7 +675,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -736,13 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="62" column="35" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/multiprocessing/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="321" column="0" lean-forward="false" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -844,25 +851,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="272" column="19" lean-forward="false" selection-start-line="272" selection-start-column="19" selection-end-line="272" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recommend_container/recommend7/recommend_count">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68526">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/count.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,19 +915,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recommend_container/test/recommend_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Parallel_processing/log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="73" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="73" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/name_topicid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#106#6278#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommend_fromurl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="125" column="57" lean-forward="false" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
+          <folding>
+            <element signature="e#37#60#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,53 +959,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recommend_container/test/recommend_count">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/name_topicid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding>
-            <element signature="e#106#6278#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parallel_processing/recommend_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="136" column="26" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="136" selection-end-column="26" />
-          <folding>
-            <element signature="e#37#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recommend_fromurl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="125" column="57" lean-forward="false" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
-          <folding>
-            <element signature="e#37#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/add_re_relation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res_container/test">
+    <entry file="file://$PROJECT_DIR$/recommend_container/test/recommend_list">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1009,10 +967,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res_container/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_re_relation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/count.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Parallel_processing/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="129">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -1021,9 +1011,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Parallel_processing/None_recommend_list">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="12221" column="60" lean-forward="true" selection-start-line="12221" selection-start-column="4" selection-end-line="12221" selection-end-column="60" />
+        <state relative-caret-position="-6122">
+          <caret line="12040" column="60" lean-forward="true" selection-start-line="12040" selection-start-column="4" selection-end-line="12040" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parallel_processing/recommend_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="e#37#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recommend_container/test/recommend_count">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="18" column="68" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="18" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="172" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#163#1022#0" expanded="false" />
+            <element signature="e#1058#2789#0" expanded="false" />
+            <element signature="e#2825#4104#0" expanded="false" />
+            <element signature="e#4140#4814#0" expanded="false" />
+            <element signature="e#4845#5239#0" expanded="false" />
+            <element signature="e#5269#6090#0" expanded="false" />
+            <element signature="e#6137#7655#0" expanded="false" />
+            <element signature="e#7700#9314#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

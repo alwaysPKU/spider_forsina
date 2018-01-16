@@ -15,7 +15,7 @@ import time
 def recomend(star_url, path):
     with open(path,'a') as f:
         for k,v in star_url.items():
-            p = Pool(3)
+            p = Pool(4)
             star_name = k    #明星名字
             print('======='+star_name+'=======')
             relation_list = [] # 解析的明星relation列表
@@ -38,12 +38,22 @@ def recomend(star_url, path):
             # relation_list=analysis.get_relations(data)
             relation_list = p.apply_async(analysis.get_relations, args=(data,)).get()
             # movie_url=analysis.get_movieurl(data)
-            movie_url=p.apply_async(analysis.get_movieurl, args=(data,)).get()
+            movie_url1=p.apply_async(analysis.get_movieurl_old2, args=(data,)).get()
+            movie_url2=p.apply_async(analysis.get_movieandtvurl, args=(data,)).get()
             # show_url=analysis.get_showurl(data)
             show_url=p.apply_async(analysis.get_showurl, args=(data,)).get()
             # print(show_url)
             p.close()
             p.join()
+            #取movieurl并集
+            # movie_url = []
+            if movie_url1 is '' or movie_url1 is None:
+                movie_url = movie_url2
+            elif movie_url2 is '' or movie_url2 is None:
+                movie_url = movie_url1
+            else:
+                movie_url2.extend(movie_url1)
+                movie_url = list(set(movie_url2))
 
             # relation 结果存储 {relation:[name...}
             if len(relation_list)!=0:
