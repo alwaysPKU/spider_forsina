@@ -144,13 +144,18 @@ def get_movieandtvurl(data):
     tags1 = soup1.find_all('div', {'class': 'starMovieAndTvplay'})
     for tag1 in tags1:
         soup2 = bs4.BeautifulSoup(str(tag1), 'html.parser')
-        tags2 = soup2.find_all('a', {'href': True})
+        tags2 = soup2.find_all('li', {'class': 'listItem'})
         for tag2 in tags2:
-            url_tmp = tag2['href']
-            if url_tmp[0] == '/':
-                movie_url = tmp + url_tmp
-            elif url_tmp[1] == 'h':
-                movie_url = url_tmp
+            soup3 = bs4.BeautifulSoup(str(tag2), 'html.parser')
+            tag3 = soup3.find('a', {'href': True})
+            if tag3 is not None:
+                url_tmp = tag3['href']
+                if url_tmp[0] == '/':
+                    movie_url = tmp + url_tmp
+                elif url_tmp[1] == 'h':
+                    movie_url = url_tmp
+                else:
+                    continue
             else:
                 continue
             url.append(movie_url)
