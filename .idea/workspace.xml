@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1844c673-cac8-479c-a92f-8c4154a96299" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parallel_processing/None_recommend_list" afterPath="$PROJECT_DIR$/Parallel_processing/None_recommend_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parallel_processing/log" afterPath="$PROJECT_DIR$/Parallel_processing/log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analysis.py" afterPath="$PROJECT_DIR$/analysis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend_container/test/recommend_count" afterPath="$PROJECT_DIR$/recommend_container/test/recommend_count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend_container/test/recommend_list" afterPath="$PROJECT_DIR$/recommend_container/test/recommend_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend_container/test/recommend_list_prior" afterPath="$PROJECT_DIR$/recommend_container/test/recommend_list_prior" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend_container/test/recommend_lose" afterPath="$PROJECT_DIR$/recommend_container/test/recommend_lose" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res_container/test" afterPath="$PROJECT_DIR$/res_container/test" />
-    </list>
+    <list default="true" id="1844c673-cac8-479c-a92f-8c4154a96299" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analysis.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="analysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analysis.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -86,6 +76,16 @@
                 <element signature="e#6340#7858#0" expanded="false" />
                 <element signature="e#7903#9517#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,16 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="count.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/count.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -703,13 +693,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res_container/res9">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="2914" column="0" lean-forward="false" selection-start-line="2914" selection-start-column="0" selection-end-line="2914" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res_container/res7">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1164">
@@ -1057,6 +1040,14 @@
             <element signature="e#6340#7858#0" expanded="false" />
             <element signature="e#7903#9517#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
