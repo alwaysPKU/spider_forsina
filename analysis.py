@@ -1,9 +1,13 @@
 import bs4
 import load_url as lurl
 import re
-from multiprocessing import Pool
+
 # 这里输入都是load的data
-tmp = "https://baike.baidu.com" #拼接前缀
+# 拼接前缀
+
+tmp = "https://baike.baidu.com"
+
+
 def get_relations(data):
     """
     直接读取html数据，解析出来明星的relations
@@ -21,7 +25,7 @@ def get_relations(data):
         tag2 = soup2.find_all('div', attrs={'class': 'name'})
         if len(tag2) == 0:
             continue
-        dict = {}
+        # dict = {}
         for i in tag2:
             if not i.em:
                 continue
@@ -185,7 +189,7 @@ def get_showurl(data):
     :return:返回 show_url 列表
     """
     res = []
-    res2 = []
+    # res2 = []
     soup1 = bs4.BeautifulSoup(data, 'html.parser')
     tags1 = soup1.find_all('table', attrs={'class': 'cell-module'})
     if (len(tags1) == 0):
