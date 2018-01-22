@@ -1,11 +1,6 @@
 import json as js
 
-# full_list= []
-# with open('/Users/zhangwei/PycharmProjects/recommend_baike_system/recommend2/recommend_list') as f:
-#     data = f.readlines()
-#     for item in data:
-#         full_list.append(js.loads(item))
-#     # print(full_list[0])
+
 def ad_re_relation(path):
     """
     增加反向关系

@@ -38,22 +38,13 @@ def recomend(star_url, path):
             # relation_list=analysis.get_relations(data)
             relation_list = p.apply_async(analysis.get_relations, args=(data,)).get()
             # movie_url=analysis.get_movieurl(data)
-            movie_url1=p.apply_async(analysis.get_movieurl_old2, args=(data,)).get()
-            movie_url2=p.apply_async(analysis.get_movieandtvurl, args=(data,)).get()
+            movie_url = p.apply_async(analysis.get_movieandtvurl, args=(data,)).get()
+            # movie_url2=p.apply_async(analysis.get_movieandtvurl, args=(data,)).get()
             # show_url=analysis.get_showurl(data)
             show_url=p.apply_async(analysis.get_showurl, args=(data,)).get()
             # print(show_url)
             p.close()
             p.join()
-            #取movieurl并集
-            # movie_url = []
-            if movie_url1 is '' or movie_url1 is None:
-                movie_url = movie_url2
-            elif movie_url2 is '' or movie_url2 is None:
-                movie_url = movie_url1
-            else:
-                movie_url2.extend(movie_url1)
-                movie_url = list(set(movie_url2))
 
             # relation 结果存储 {relation:[name...}
             if len(relation_list)!=0:
@@ -69,17 +60,27 @@ def recomend(star_url, path):
 
             p2 = Pool(2)
             #load movieurl列表并解析
-            if movie_url != None:
+            # if movie_url != None:
+            #     print('movie')
+            #     movie_set = p2.apply_async(get_movieset, args=(movie_url, )).get()
+            #     # 把该明星名字从列表中去除
+            #     if movie_set != '' and star_name in movie_set:
+            #         movie_set.remove(star_name)
+            #     movie_list=list(movie_set)
+            #     movie_dic['movie']=movie_list
+            #     if len(movie_dic['movie']) != 0 and movie_dic['movie'] != None:
+            #         full_relation.append(movie_dic)
+            #         print('movie_over')
+            if movie_url:
                 print('movie')
-                movie_set = p2.apply_async(get_movieset, args=(movie_url, )).get()
-                # 把该明星名字从列表中去除
-                if movie_set != '' and star_name in movie_set:
-                    movie_set.remove(star_name)
-                movie_list=list(movie_set)
-                movie_dic['movie']=movie_list
-                if len(movie_dic['movie']) != 0 and movie_dic['movie'] != None:
+                movie_relation_list = p2.apply_async(get_movie_relation_list, args=(movie_url, )).get()
+                if movie_relation_list and star_name in movie_relation_list:
+                    movie_relation_list.remove(star_name)
+                movie_dic['movie'] = movie_relation_list
+                if movie_dic['movie']:
                     full_relation.append(movie_dic)
                     print('movie_over')
+
 
             # load showurl列表并解析
             if show_url!= None:
@@ -107,7 +108,7 @@ def recomend(star_url, path):
 
 def get_movieset(movie_url):
     movie_set = set()
-    # 逐一借些movie的url
+    # 逐一解析movie的url
     for url in movie_url:
         # print(url)
         tmpset = analysis.analysis_movieurl(url)
@@ -117,6 +118,24 @@ def get_movieset(movie_url):
         else:
             continue
     return movie_set
+
+
+def get_movie_relation_list(movie_url):
+    """
+    因为要按电影先后顺序排列人物关系，所以需要list
+    :param movie_url: 
+    :return: 
+    """
+    movie_relation_list = []
+    for url in movie_url:
+        tmp_list = analysis.analysis_movieurl_list(url)
+        if tmp_list:
+            movie_relation_list.extend(tmp_list)
+        else:
+            continue
+    relation = list(set(movie_relation_list))
+    relation.sort(key=movie_relation_list.index)
+    return relation
 
 
 def get_showset(show_url):

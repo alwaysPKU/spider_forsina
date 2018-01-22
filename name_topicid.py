@@ -2,6 +2,7 @@
 import json as js
 import os
 
+
 # 把name——topicid存入词典
 def name_oid(path1,path2,path3):
     star_dic = dict()
@@ -71,7 +72,7 @@ def name_oid(path1,path2,path3):
 
             new_topic_dic={} # 存储topic形式的推荐
             count_topic_dic={} # 存储统计
-            lose_topic_id ={}
+            lose_topic_id ={} # 存储为转化为topicid的名字
             for i in data.keys():
                 # i就是被推荐明星名字
                 relation_list = data[i]

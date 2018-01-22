@@ -233,38 +233,70 @@ def analysis_movieurl(url):
     num=-1
     if not tag1:
         return None
-    # else:
     soup2 = bs4.BeautifulSoup(str(tag1), 'html.parser')
     tags2 = soup2.find_all('dt',attrs={'class':'basicInfo-item name'})
     tags3 = soup2.find_all('dd',attrs={'class':'basicInfo-item value'})
-
     for tag2 in tags2:
         # print(tag2.text.strip('\n'))
         if tag2.text != '主    演' and num==len(tags2)-2:
             num=-1
         else:
             if tag2.text == '主    演':
-                # print('here')
                 num=num+1
                 break
             else:
                 num=num+1
-    # print(num)
     if num!=-1:
         zhuyan = tags3[num]
     else:
         return None
-    # list = zhuyan.text.strip('\n').split('，')
-    # zhuyan =
     list = re.split(r'[，、]', zhuyan.text.strip('\n'))
-    # print(list)
-    # print(type(list))
     for i in range(len(list)):
         list[i] = re.sub('[\[\d\]\n\xa0]|[\(（][^\)）]+[\)）]$', '', list[i])
-        # list[i]=list[i].rstrip('\n').rstrip('[').rstrip('（')
     relation=set(list)
-    # print(len(relation))
-    # print(relation)
+    return relation
+
+
+def analysis_movieurl_list(url):
+    """
+    因为要获取有序的列表，需要返回list（去重的list）
+    :param url: 
+    :return: 
+    """
+    # relation = []
+    data = lurl.load(url)
+    if data == None:
+        print('timeout:' + url)
+        with open('log', 'a') as f:
+            f.write('movie_url load 失败：' + url + '\n')
+        return None
+    soup1 = bs4.BeautifulSoup(data, 'html.parser')
+    tag1 = soup1.find('div', attrs={'class': 'basic-info cmn-clearfix'})
+    num = -1
+    if not tag1:
+        return None
+    soup2 = bs4.BeautifulSoup(str(tag1), 'html.parser')
+    tags2 = soup2.find_all('dt', attrs={'class': 'basicInfo-item name'})
+    tags3 = soup2.find_all('dd', attrs={'class': 'basicInfo-item value'})
+    for tag2 in tags2:
+        # print(tag2.text.strip('\n'))
+        if tag2.text != '主    演' and num == len(tags2) - 2:
+            num = -1
+        else:
+            if tag2.text == '主    演':
+                num = num + 1
+                break
+            else:
+                num = num + 1
+    if num != -1:
+        zhuyan = tags3[num]
+    else:
+        return None
+    tmp_list = re.split(r'[，、]', zhuyan.text.strip('\n'))
+    for i in range(len(tmp_list)):
+        tmp_list[i] = re.sub('[\[\d\]\n\xa0]|[\(（][^\)）]+[\)）]$', '', tmp_list[i])
+    relation = list(set(tmp_list))
+    relation.sort(key=tmp_list.index)
     return relation
 
 

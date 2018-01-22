@@ -1,4 +1,5 @@
 import urllib.request
+# from bs4 import BeautifulSoup
 
 # 返回url内容
 def load2(url):
